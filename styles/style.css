@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; overflow-x:hidden; scroll-behavior:smooth; font-family:'Montserrat',sans-serif; scroll-snap-type:y mandatory; }
+
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 20px; background:rgba(255,243,224,0.95);
+  position:fixed; top:0; width:100%; z-index:1000;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+header .logo { font-family:'Playfair Display',serif; font-size:24px; }
+nav a { margin:0 8px; font-size:14px; font-weight:600; text-decoration:none; color:#333; }
+
+/* Full-page background gradient */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(to bottom right, #ffecd2, #fcb69f); /* Gradient spans entire page */
+}
+
+/* Remove backgrounds from sections */
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+  padding: 20px;
+  background: transparent; /* makes sections inherit page background */
+}
+
+/* Optional: add subtle semi-transparent overlay for content readability */
+section::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(255,255,255,0.05); /* subtle overlay if needed */
+  z-index: -1;
+}
+#hero { position:relative; width:100%; height:100vh; overflow:hidden; background: linear-gradient(to right, #ffecd2, #fcb69f); }
+.carousel-container { width:100%; height:100%; position:relative; }
+.carousel-slide { display:none; width:100%; height:100%; }
+.carousel-slide img { width:100%; height:100%; object-fit:cover; }
+.carousel-caption { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; z-index:2; width:90%; }
+.carousel-caption h1 { font-family:'Playfair Display', serif; font-size:56px; text-shadow:2px 2px 10px rgba(0,0,0,0.5); margin-bottom:15px; }
+.carousel-caption p { font-size:20px; text-shadow:1px 1px 6px rgba(0,0,0,0.5); }
+.btn-transparent { background:rgba(255,255,255,0.2); border:2px solid #fff; padding:12px 30px; border-radius:6px; font-weight:bold; text-decoration:none; transition:0.3s; }
+.btn-transparent:hover { background:rgba(255,255,255,0.5); }
+
+#menu { gap:15px; }
+.btn-secondary { display:inline-block; background:#1976d2; color:white; padding:10px 20px; margin-bottom:20px; border-radius:6px; }
+.menu-preview { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; padding:0 10px; max-width:100%; }
+.menu-card, .review-card {
+  width: 220px;        /* same width for all cards */
+  height: 280px;       /* same height for all cards */
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.menu-card img, .review-card img {
+  width: 100%;
+  height: 150px;      /* uniform image height */
+  object-fit: cover;
+  border-radius: 8px;
+}
+.menu-card p { margin-top:10px; font-weight:600; }
+.menu-card:hover { transform:translateY(-5px); }
+
+#reviews { gap:15px; }
+.review-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; max-width:100%; padding:0 10px; }
+.review-card { background:#fff; padding:20px; width:250px; border-radius:10px; box-shadow:0 6px 15px rgba(0,0,0,0.1); font-style:italic; display:flex; flex-direction:column; justify-content:center; }
+
+form { max-width:500px; display:flex; flex-direction:column; gap:12px; width:90%; margin:auto; }
+input, textarea { padding:10px; border-radius:6px; border:1px solid #ccc; }
+.btn-primary { background:#d32f2f; color:white; padding:12px 20px; border:none; border-radius:6px; cursor:pointer; }
+footer { background:#f1f1f1; padding:20px; text-align:center; }
